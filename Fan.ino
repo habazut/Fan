@@ -3,7 +3,7 @@
 #include <TimerOne.h>
 #include <EEPROM.h>
 #include <string.h>
-#define TIMER1_A_PIN   9
+#define TIMER1_A_PIN   9    // this is the output pin
 #define TIMER1_B_PIN   10
 #define MAGIC "Fan1.0"
 
@@ -37,6 +37,8 @@ void setup(void) {
 
     EEPROM.get(0, myee);
     Serial.println("");
+    Serial.print("Fan 1.1 starting on pin ");
+    Serial.println(TIMER1_A_PIN);
     Serial.print("EEPROM read ");
     Serial.print(myee.magic);
     Serial.print(" speed=");
